@@ -6,33 +6,36 @@
 }
 
 :root {
-    --primary-color: #00FFF7;
-    --secondary-color: #FF00C8;
-    --accent-color: #FFE600;
-    --bg-dark: #181825;
-    --bg-light: #1e1e2e;
-    --text-light: #ffffff;
-    --text-gray: #b0b0b0;
+    --primary-color: #d97757;
+    --secondary-color: #ab6548;
+    --accent-color: #e8927c;
+    --bg-light: #fdfcfa;
+    --bg-cream: #f5f3f0;
+    --text-dark: #2c2825;
+    --text-gray: #6b6562;
+    --text-muted: #938e8a;
+    --border-color: #e6e3df;
     --transition: all 0.3s ease;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-light) 100%);
-    color: var(--text-light);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
     line-height: 1.6;
     min-height: 100vh;
 }
 
 /* Header and Navigation */
 header {
-    background: rgba(24, 24, 37, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 nav {
@@ -45,10 +48,8 @@ nav {
 
 .logo-section h1 {
     font-size: 1.8rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 .nav-links {
@@ -58,7 +59,7 @@ nav {
 }
 
 .nav-links a {
-    color: var(--text-light);
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
@@ -98,17 +99,16 @@ nav {
 .hero-content h2 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-dark);
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .hero-description {
@@ -116,6 +116,7 @@ nav {
     color: var(--text-gray);
     margin-bottom: 2rem;
     max-width: 600px;
+    line-height: 1.7;
 }
 
 .cta-buttons {
@@ -134,24 +135,24 @@ nav {
 
 .btn-primary {
     background: var(--primary-color);
-    color: var(--bg-dark);
+    color: white;
 }
 
 .btn-primary:hover {
     background: var(--secondary-color);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 255, 247, 0.3);
+    box-shadow: 0 4px 12px rgba(217, 119, 87, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background: var(--accent-color);
-    color: var(--bg-dark);
+    background: var(--primary-color);
+    color: white;
     transform: translateY(-2px);
 }
 
@@ -183,7 +184,8 @@ nav {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--primary-color);
+    color: var(--text-dark);
+    font-weight: 600;
 }
 
 .feature-grid {
@@ -193,17 +195,18 @@ nav {
 }
 
 .feature-card {
-    background: rgba(30, 30, 46, 0.8);
+    background: white;
     padding: 2rem;
     border-radius: 12px;
-    border: 1px solid rgba(0, 255, 247, 0.2);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(0, 255, 247, 0.2);
 }
 
 .feature-icon {
@@ -212,9 +215,10 @@ nav {
 }
 
 .feature-card h3 {
-    color: var(--accent-color);
+    color: var(--text-dark);
     margin-bottom: 1rem;
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .feature-card p {
@@ -227,7 +231,7 @@ nav {
     max-width: 1400px;
     margin: 6rem auto;
     padding: 2rem;
-    background: rgba(30, 30, 46, 0.5);
+    background: var(--bg-cream);
     border-radius: 16px;
 }
 
@@ -235,7 +239,8 @@ nav {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--secondary-color);
+    color: var(--text-dark);
+    font-weight: 600;
 }
 
 .use-case-list {
@@ -245,22 +250,24 @@ nav {
 }
 
 .use-case {
-    background: rgba(24, 24, 37, 0.8);
+    background: white;
     padding: 2rem;
     border-radius: 12px;
-    border-left: 4px solid var(--secondary-color);
+    border-left: 4px solid var(--primary-color);
     transition: var(--transition);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .use-case:hover {
     transform: translateX(10px);
-    border-left-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .use-case h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .use-case p {
@@ -279,7 +286,8 @@ nav {
 .about h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: var(--accent-color);
+    color: var(--text-dark);
+    font-weight: 600;
 }
 
 .about-content p {
@@ -300,7 +308,8 @@ nav {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--primary-color);
+    color: var(--text-dark);
+    font-weight: 600;
 }
 
 .developer-logos {
@@ -312,18 +321,19 @@ nav {
 }
 
 .developer-card {
-    background: rgba(30, 30, 46, 0.8);
+    background: white;
     padding: 2rem;
     border-radius: 12px;
-    border: 2px solid rgba(0, 255, 247, 0.2);
+    border: 1px solid var(--border-color);
     text-align: center;
     transition: var(--transition);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .developer-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-color: var(--primary-color);
-    box-shadow: 0 15px 40px rgba(0, 255, 247, 0.3);
 }
 
 .logo-container {
@@ -332,8 +342,8 @@ nav {
     margin: 0 auto 1.5rem;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--primary-color);
-    background: var(--bg-dark);
+    border: 3px solid var(--border-color);
+    background: var(--bg-cream);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -351,9 +361,10 @@ nav {
 }
 
 .developer-card h3 {
-    color: var(--accent-color);
+    color: var(--text-dark);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .developer-card p {
@@ -363,10 +374,10 @@ nav {
 
 /* Footer */
 footer {
-    background: rgba(24, 24, 37, 0.95);
+    background: var(--bg-cream);
     padding: 2rem;
     text-align: center;
-    border-top: 2px solid var(--primary-color);
+    border-top: 1px solid var(--border-color);
     margin-top: 4rem;
 }
 
